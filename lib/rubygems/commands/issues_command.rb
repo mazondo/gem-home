@@ -10,6 +10,11 @@ class Gem::Commands::IssuesCommand < Gem::Command
 
     name = get_one_gem_name
     link = ::Gem::Home::SpecLoader.get_issues_url(name)
-    ::Gem::Home::Browser.open_link(link)
+    if link
+      ::Gem::Home::Browser.open_link(link)
+    else
+      puts "We did our best, but there are no links for this gem"
+      exit 1
+    end
   end
 end
