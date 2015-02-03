@@ -1,6 +1,11 @@
 # Gem::Home
 
-Ads some useful extensions to the default `gem` command
+Adds some useful extensions to the default `gem` command
+
+The gem tries to do some clever things to get you somewhere no matters what:
+ * First the explicit docs, homepage or issues links are used from the spec
+ * If not present, and the gem is stored on github, it'll use the relevant github links
+ * If not on github, the gem falls back to the rubydoc page for the gem
 
 ## Installation
 
@@ -10,8 +15,11 @@ Ads some useful extensions to the default `gem` command
 
 ```bash
 gem home gem-name
+ # opens the gem's homepage
 gem issues gem-name
+ # opens the gem's issue tracker for bug reporting
 gem docs gem-name
+ # opens the gem's documentation
 ```
 
 ## Contributing
