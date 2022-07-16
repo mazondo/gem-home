@@ -40,7 +40,7 @@ module Gem
 
       def self.pull_gemspec(gem)
         begin
-          result = open("http://rubygems.org/api/v1/gems/#{gem}.json").read
+          result = URI.open("http://rubygems.org/api/v1/gems/#{gem}.json").read
           return JSON.parse(result)
         rescue => e
           puts "Error loading #{gem} gem's spec from rubygems.org"
